@@ -1,25 +1,19 @@
-from Sudoku_Console import print_board, solve_board, solvable
-from Sudoku_Questions import get_board, get_board_raw
+from SudokuGenerator import generate_sudoku_board
+from SudokuSolver import SudokuSolver, DIFFICULTY
 
-# Driver Function
 if __name__ == '__main__':
-    while True:
-        diff = str(input("Difficulty Level:\n")).lower()
-        if diff == "easy" or diff == "medium" or diff == "hard":
-            break
+    difficulty_level = 'easy'
+    sudoku_type = 9
+    # while True:
+    #     difficulty_level = input("Select your difficulty level\n[Easy, Medium, Hard, Extreme]: ").lower()
+    #     if difficulty_level not in DIFFICULTY[sudoku_type].keys():
+    #         print(">> Invalid input, try again")
+    #         continue
+    #     break
 
-    if str(input("raw board / new board :: ")).lower() == "raw":
-        curr_board = get_board_raw(diff)
-    else:
-        print("\nGenerating Game Board...")
-        while True:
-            curr_board = get_board(diff)
-            if solvable(curr_board):
-                break
+    sudoku_solver = SudokuSolver(generate_sudoku_board(sudoku_type), difficulty_level)
+    print(sudoku_solver)
 
-    print()
-    print_board(curr_board)
-    print("\nSolving...")
-    solve_board(curr_board)
-    print("\nCompleted Board -->\n")
-    print_board(curr_board)
+    print("Solving Sudoku puzzle...")
+    sudoku_solver.backtrack_solve_board()
+    print(sudoku_solver)
