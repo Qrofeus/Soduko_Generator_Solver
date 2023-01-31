@@ -6,10 +6,11 @@ DIFFICULTY = {
 
 
 class SudokuSolver:
-    def __init__(self, sudoku_board, level):
+    def __init__(self, sudoku_board, level='easy', s_type=9, generating=False):
         self.game_board = sudoku_board
         # print(self.game_board)
-        self.prep_board(DIFFICULTY[9][level])
+        if not generating:
+            self.prep_board(DIFFICULTY[s_type][level])
 
     def prep_board(self, difficulty_level):
         # Calculate empty cells
@@ -18,9 +19,9 @@ class SudokuSolver:
             while True:
                 pos_row = randint(0, (len(self.game_board) - 1))
                 pos_col = randint(0, (len(self.game_board) - 1))
-                if self.game_board[pos_row][pos_col] == 0:
+                if self.game_board[pos_row][pos_col] == '.':
                     continue
-                self.game_board[pos_row][pos_col] = 0
+                self.game_board[pos_row][pos_col] = '.'
                 break
 
     def __str__(self):
@@ -68,7 +69,7 @@ class SudokuSolver:
         # Returns None if no cells are empty
         for row in range(len(self.game_board)):
             for col in range(len(self.game_board[0])):
-                if self.game_board[row][col] == 0:
+                if self.game_board[row][col] == '.':
                     return row, col
         return None
 
@@ -89,6 +90,9 @@ class SudokuSolver:
                 if self.backtrack_solve_board():
                     return True
 
-                self.game_board[row][col] = 0
+                self.game_board[row][col] = '.'
         # print("Resetting cell")
         return False
+
+    def get_board(self):
+        return self.game_board
