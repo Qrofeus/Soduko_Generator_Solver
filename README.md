@@ -1,9 +1,8 @@
 
 # Sudoku Generator & Solver
 
-Generates a unique sudoku board everytime using the **Backtracking** algorithm, 
-preps the board according to the difficulty selected 
-and uses **Backtracking** algorithm to solve the sudoku board generated
+Selects a sudoku board from those generated using the **Shrinking Sqaure** algorithm\ 
+Prepares the board according to the difficulty selected and uses **Backtracking** algorithm to solve the sudoku board generated
 
 ## Install and Run
 
@@ -26,9 +25,11 @@ Run main.py using Python
 python main.py
 ```
 
+## Program Explanation
+
+- Running the /Shrinking_Square_Algorithm/SudokuGridGenerator.java file generates 500 unique sudoku boards and stores them in /Sudoku_Grids directory
+- Running the /main.py file select one of the generated sudoku grids and creates a playable board.
 
 ## Features WIP
 
-- Integrating **Shrinking Square** algorithm used to generate a valid sudoku grid.
-  For more info navigate to [Shrinking Square Algorithm](/Shrinking_Square_Algorithm) directory in the project
 - GUI version with playable sudoku board
