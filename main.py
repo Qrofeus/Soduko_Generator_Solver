@@ -1,4 +1,4 @@
-from SudokuGenerator import generate_sudoku_board
+from BoardGenerator import generate_board
 from SudokuSolver import SudokuSolver  # DIFFICULTY
 
 if __name__ == '__main__':
@@ -11,7 +11,7 @@ if __name__ == '__main__':
     #         continue
     #     break
 
-    sudoku_solver = SudokuSolver(sudoku_board=generate_sudoku_board(sudoku_type), level=difficulty_level,
+    sudoku_solver = SudokuSolver(sudoku_board=generate_board(sudoku_type), level=difficulty_level,
                                  s_type=sudoku_type)
     print(sudoku_solver)
 

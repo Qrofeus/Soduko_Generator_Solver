@@ -1,7 +1,7 @@
 
 # Sudoku Generator & Solver
 
-Selects a sudoku board from those generated using the **Shrinking Sqaure** algorithm\ 
+Selects a sudoku board from those generated using the **Shrinking Sqaure** algorithm\
 Prepares the board according to the difficulty selected and uses **Backtracking** algorithm to solve the sudoku board generated
 
 ## Install and Run
@@ -33,3 +33,7 @@ python main.py
 ## Features WIP
 
 - GUI version with playable sudoku board
+
+## Known Issues
+
+[//]: # (- Solving sudoku board using backtracking is not working)
