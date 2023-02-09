@@ -46,9 +46,11 @@ def generate_board(sudoku_type=9):
                 grid_lines = grid.readlines()
 
             for i in range(len(grid_lines)):
-                if i == len(grid_lines) - 1:
-                    sudoku_board[i] = list(map(int, grid_lines[i].split(',')))
-                    continue
+                # Will be needed if the last row in the txt file does not end with '\n'
+                # if i == len(grid_lines) - 1:
+                #     sudoku_board[i] = list(map(int, grid_lines[i].split(',')))
+                #     continue
+                
                 # Exclude '\n' character in .txt file
                 sudoku_board[i] = list(map(int, grid_lines[i][:-1].split(',')))
 

@@ -281,7 +281,7 @@ class SudokuGridGenerator {
             throw new IllegalArgumentException("The grid must be a single-dimension grid of length 81");
         String formattedGrid = "";
         for (int i = 0; i < 81; i++) {
-            formattedGrid = formattedGrid + grid[i] + (i % 9 == 8 ? (i != 80 ? "\n" : "") : ",");
+            formattedGrid = formattedGrid + grid[i] + (i % 9 == 8 ? "\n" : ",");
         }
         return formattedGrid;
     }
