@@ -27,8 +27,8 @@ python main.py
 
 ## Program Explanation
 
-- Running the /Shrinking_Square_Algorithm/SudokuGridGenerator.java file generates 500 unique sudoku boards and stores them in /Sudoku_Grids directory
-- Running the /main.py file select one of the generated sudoku grids and creates a playable board.
+- Running the `/Shrinking_Square_Algorithm/SudokuGridGenerator.java` file generates 500 unique sudoku boards and stores them in `/Sudoku_Grids` directory.
+- Running the `/main.py` file select one of the generated sudoku grids and creates a playable board.
 
 ## Features WIP
 
